@@ -7,66 +7,45 @@
 
 html, body {
     height: 100%;
+    width: 100%;
     background: #0a0b0e;
     color: #ffffff;
     overflow: hidden;
 }
 
 #app {
-    height: 100vh;
-    height: 100dvh;
+    height: 100%;
+    width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     background: #0a0b0e;
-    position: relative;
 }
 
-/* Контент с отступом для кнопки */
-.content {
-    min-height: 100%;
-    padding: 16px 16px 100px 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* Экраны */
-.screen {
-    display: none;
-    min-height: 100%;
-    width: 100%;
-    background: #0a0b0e;
-}
-
-.screen.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Авторизация - вертикальное центрирование */
+/* ЭКРАН АВТОРИЗАЦИИ - СТРОГО ПО ЦЕНТРУ */
 #auth-screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    height: 100dvh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0a0b0e;
+    z-index: 1000;
 }
 
 #auth-screen.active {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.auth-wrapper {
+.auth-center {
     width: 100%;
     padding: 20px;
-    max-width: 440px;
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .auth-container {
@@ -74,18 +53,95 @@ html, body {
     padding: 40px 24px;
     border-radius: 32px;
     width: 100%;
+    max-width: 400px;
     text-align: center;
     animation: scaleIn 0.4s ease;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-@keyframes scaleIn {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+/* ГЛАВНЫЙ ЭКРАН */
+#main-screen {
+    display: none;
+    min-height: 100%;
+    background: #0a0b0e;
 }
 
+#main-screen.active {
+    display: block;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px 100px 16px;
+    min-height: 100vh;
+}
+
+/* Контент для других экранов */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px 100px 16px;
+    min-height: 100vh;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    margin-bottom: 20px;
+    background: #0a0b0e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #9f7aea;
+}
+
+header h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: #1e2025;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 14px;
+    font-size: 18px;
+    color: #a0a8b8;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.icon-btn:hover {
+    background: #2a2d35;
+    color: white;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #9f7aea;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Логотип */
 .logo h1 {
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: 32px;
     font-weight: 600;
     margin-bottom: 4px;
     background: linear-gradient(135deg, #9f7aea, #667eea);
@@ -95,7 +151,7 @@ html, body {
 
 .logo p {
     color: #666c7a;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: 14px;
     margin-bottom: 32px;
 }
 
@@ -114,18 +170,6 @@ html, body {
     align-items: center;
     gap: 12px;
     transition: all 0.3s ease;
-    animation: pulseBot 2s infinite;
-}
-
-@keyframes pulseBot {
-    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3); }
-    50% { transform: scale(1.02); box-shadow: 0 8px 25px rgba(0, 136, 204, 0.5); }
-    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3); }
-}
-
-.bot-button:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 136, 204, 0.6);
 }
 
 .bot-icon {
@@ -149,7 +193,6 @@ html, body {
 .bot-arrow {
     font-size: 20px;
     color: white;
-    opacity: 0.8;
 }
 
 /* Разделитель */
@@ -195,13 +238,11 @@ html, body {
     color: white;
     font-size: 16px;
     text-align: center;
-    transition: all 0.2s;
 }
 
 #token-input:focus {
     outline: none;
     border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .primary-btn {
@@ -214,12 +255,7 @@ html, body {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.primary-btn:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s;
 }
 
 .error-message {
@@ -227,67 +263,6 @@ html, body {
     font-size: 14px;
     min-height: 20px;
     text-align: center;
-}
-
-/* Шапка */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
-    margin-bottom: 20px;
-    background: #0a0b0e;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    gap: 10px;
-}
-
-header h2 {
-    font-size: clamp(18px, 4vw, 24px);
-    font-weight: 500;
-    color: #9f7aea;
-}
-
-header h3 {
-    font-size: clamp(16px, 3.5vw, 20px);
-    font-weight: 500;
-}
-
-.header-actions {
-    display: flex;
-    gap: 8px;
-}
-
-.icon-btn {
-    background: #1e2025;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 14px;
-    font-size: 18px;
-    color: #a0a8b8;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.icon-btn:hover {
-    background: #2a2d35;
-    color: white;
-    transform: translateY(-2px);
-}
-
-.back-btn {
-    background: none;
-    border: none;
-    color: #9f7aea;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 8px;
-    transition: transform 0.2s;
-}
-
-.back-btn:hover {
-    transform: translateX(-4px);
 }
 
 /* Поиск */
@@ -303,13 +278,6 @@ header h3 {
     border-radius: 30px;
     color: white;
     font-size: 16px;
-    transition: all 0.2s;
-}
-
-#search-input:focus {
-    outline: none;
-    border-color: #9f7aea;
-    box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.1);
 }
 
 /* Сетка героев */
@@ -336,17 +304,11 @@ header h3 {
 }
 
 .hero-card img {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    aspect-ratio: 1/1;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin-bottom: 12px;
-    transition: transform 0.2s;
-}
-
-.hero-card:hover img {
-    transform: scale(1.1);
+    margin: 0 auto 12px auto;
+    display: block;
 }
 
 .hero-card h4 {
@@ -357,7 +319,6 @@ header h3 {
 
 .hero-card.favorite {
     border-color: #fbbf24;
-    box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2);
 }
 
 /* Способности */
@@ -377,12 +338,6 @@ header h3 {
     cursor: pointer;
     border: 1px solid #2a2d35;
     transition: all 0.2s;
-    animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
 }
 
 .skill-card:hover {
@@ -400,23 +355,17 @@ header h3 {
 
 .skill-info {
     flex: 1;
-    min-width: 0;
 }
 
 .skill-info h4 {
-    font-size: clamp(16px, 4vw, 18px);
+    font-size: 18px;
     margin-bottom: 4px;
     color: white;
 }
 
 .skill-info p {
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: 14px;
     color: #a0a8b8;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .skill-key {
@@ -438,14 +387,11 @@ header h3 {
 .build-image {
     max-width: 100%;
     max-height: 60vh;
-    width: auto;
-    height: auto;
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    animation: scaleIn 0.4s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* Кнопка поддержки снизу */
+/* Кнопка поддержки снизу - ВСЕГДА ПО ЦЕНТРУ */
 .support-btn-bottom {
     position: fixed;
     bottom: 20px;
@@ -456,28 +402,13 @@ header h3 {
     border-radius: 40px;
     padding: 16px 32px;
     color: white;
-    font-size: clamp(14px, 3.5vw, 16px);
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    transition: all 0.2s;
-    animation: pulse 2s infinite;
     white-space: nowrap;
-    max-width: calc(100% - 40px);
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
-    50% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6); }
-    100% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
-}
-
-.support-btn-bottom:hover {
-    transform: translateX(-50%) scale(1.05);
-    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.6);
+    max-width: 90%;
 }
 
 /* Настройки */
@@ -493,7 +424,6 @@ header h3 {
     justify-content: space-between;
     padding: 16px 0;
     border-bottom: 1px solid #2a2d35;
-    gap: 10px;
 }
 
 .setting-item:last-child {
@@ -535,13 +465,11 @@ header h3 {
     text-align: left;
     cursor: pointer;
     margin-bottom: 12px;
-    transition: all 0.2s;
 }
 
 .support-option:hover {
     background: #2a2d35;
     border-color: #9f7aea;
-    transform: translateX(4px);
 }
 
 #custom-message-container {
@@ -588,13 +516,11 @@ header h3 {
     color: #a0a8b8;
     font-size: 20px;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
 .admin-tab.active {
     background: linear-gradient(135deg, #9f7aea, #667eea);
     color: white;
-    border-color: transparent;
 }
 
 .admin-tab-content {
@@ -606,7 +532,6 @@ header h3 {
 
 .admin-tab-content.active {
     display: block;
-    animation: fadeIn 0.3s ease;
 }
 
 .stats-grid {
@@ -634,32 +559,16 @@ header h3 {
     color: #a0a8b8;
 }
 
-#support-messages {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.support-message {
-    background: #141619;
-    border-radius: 16px;
-    padding: 16px;
-    border-left: 4px solid #9f7aea;
-}
-
-/* Адаптация для телефонов */
+/* Адаптация */
 @media (max-width: 768px) {
-    .content {
-        padding: 12px 12px 90px 12px;
-    }
-    
     .heroes-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
     
     .hero-card img {
-        max-width: 80px;
+        width: 70px;
+        height: 70px;
     }
     
     .skill-card {
@@ -680,10 +589,6 @@ header h3 {
     .setting-item select {
         width: 100%;
     }
-    
-    .admin-tabs {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 480px) {
@@ -696,7 +601,8 @@ header h3 {
     }
     
     .hero-card img {
-        max-width: 70px;
+        width: 60px;
+        height: 60px;
     }
     
     .support-btn-bottom {
@@ -704,11 +610,14 @@ header h3 {
         padding: 14px 20px;
         font-size: 14px;
     }
+    
+    .admin-tabs {
+        flex-direction: column;
+    }
 }
 
-/* Для больших экранов */
-@media (min-width: 1200px) {
-    .heroes-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
+/* Анимации */
+@keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
