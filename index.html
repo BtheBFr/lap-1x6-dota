@@ -2,13 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover, height=device-height">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Lap 1x6 Pack</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
-        <!-- Экран авторизации - ПО ЦЕНТРУ -->
+        <!-- ЭКРАН АВТОРИЗАЦИИ - ТОЛЬКО ЭТОТ ЭКРАН ВИДЕН ПРИ ВХОДЕ -->
         <div id="auth-screen" class="screen active">
             <div class="auth-center">
                 <div class="auth-container">
@@ -20,7 +20,7 @@
                     <a href="https://t.me/Lap1x6Dota_bot" target="_blank" class="bot-link">
                         <div class="bot-button">
                             <span class="bot-icon">🤖</span>
-                            <span class="bot-text">Получить токен в боте</span>
+                            <span class="bot-text">Получить токен</span>
                             <span class="bot-arrow">→</span>
                         </div>
                     </a>
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <!-- Главный экран -->
+        <!-- ГЛАВНЫЙ ЭКРАН - ТОЛЬКО ГЛАВНАЯ -->
         <div id="main-screen" class="screen">
             <div class="main-content">
                 <header>
@@ -46,6 +46,7 @@
                         <button id="settings-btn" class="icon-btn">⚙️</button>
                         <button id="support-btn" class="icon-btn">💬</button>
                         <button id="admin-btn" class="icon-btn" style="display: none;">👑</button>
+                        <button id="logout-btn" class="icon-btn logout-btn" title="Выйти">🚪</button>
                     </div>
                 </header>
 
@@ -59,7 +60,7 @@
             <button id="no-hero-btn" class="support-btn-bottom">Нет нужного</button>
         </div>
 
-        <!-- Экран героя -->
+        <!-- ЭКРАН ГЕРОЯ -->
         <div id="hero-screen" class="screen">
             <div class="content">
                 <header>
@@ -74,7 +75,7 @@
             <button id="hero-support-btn" class="support-btn-bottom">Поддержка</button>
         </div>
 
-        <!-- Экран сборки -->
+        <!-- ЭКРАН СБОРКИ -->
         <div id="build-screen" class="screen">
             <div class="content">
                 <header>
@@ -94,7 +95,7 @@
             <button id="build-support-btn" class="support-btn-bottom">Поддержка</button>
         </div>
 
-        <!-- Экран настроек -->
+        <!-- ЭКРАН НАСТРОЕК -->
         <div id="settings-screen" class="screen">
             <div class="content">
                 <header>
@@ -180,7 +181,7 @@
             </div>
         </div>
 
-        <!-- Экран избранного -->
+        <!-- ЭКРАН ИЗБРАННОГО -->
         <div id="favorites-screen" class="screen">
             <div class="content">
                 <header>
@@ -191,7 +192,7 @@
             </div>
         </div>
 
-        <!-- Экран поддержки -->
+        <!-- ЭКРАН ПОДДЕРЖКИ -->
         <div id="support-screen" class="screen">
             <div class="content">
                 <header>
@@ -227,7 +228,7 @@
             </div>
         </div>
 
-        <!-- Админ-панель -->
+        <!-- АДМИН-ПАНЕЛЬ -->
         <div id="admin-screen" class="screen">
             <div class="content">
                 <header>
