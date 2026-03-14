@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Сборка - Lap 1x6 Dota</title>
+    <title>Сборка - Lap 1x6 Dota от Lap.comp и B the B</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="settings-button" id="settingsBtn">
+        <i class="fas fa-cog"></i> Настройки
+    </div>
+
     <main class="container build-page">
         <div class="build-header">
             <button class="back-btn" id="backBtn">
@@ -37,7 +41,90 @@
 
     <!-- Модальное окно поддержки -->
     <div class="modal" id="supportModal">
-        <!-- ... копировать из index.html ... -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Поддержка</h2>
+                <button class="close-btn" id="closeSupportModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">Выберите проблему:</p>
+                <div class="support-options">
+                    <button class="support-option" data-problem="settings">
+                        <i class="fas fa-sliders-h"></i>
+                        Не работают настройки
+                    </button>
+                    <button class="support-option" data-problem="missing_skill">
+                        <i class="fas fa-bolt"></i>
+                        Нет скилла
+                    </button>
+                    <button class="support-option" data-problem="wrong_build">
+                        <i class="fas fa-image"></i>
+                        Сборка неправильная
+                    </button>
+                    <button class="support-option" data-problem="missing_hero">
+                        <i class="fas fa-user"></i>
+                        Нет персонажа
+                    </button>
+                    <button class="support-option" data-problem="other">
+                        <i class="fas fa-question"></i>
+                        Другое
+                    </button>
+                </div>
+                
+                <div id="additionalFields" class="additional-fields" style="display: none;">
+                    <input type="text" id="heroField" class="modal-input" placeholder="Имя героя">
+                    <input type="text" id="skillField" class="modal-input" placeholder="Название скилла">
+                    <textarea id="descriptionField" class="modal-textarea" placeholder="Опишите проблему подробнее..."></textarea>
+                    <button class="submit-support-btn" id="submitSupport">
+                        <i class="fas fa-paper-plane"></i>
+                        Отправить
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Настройки клавиш</h2>
+                <button class="close-btn" id="closeSettingsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="settings-info">Нажмите на кнопку, затем нажмите новую клавишу</p>
+                <div class="keybinds-grid">
+                    <div class="keybind-item">
+                        <span class="skill-label">Q</span>
+                        <button class="keybind-btn" id="key-Q" data-skill="q">Q</button>
+                    </div>
+                    <div class="keybind-item">
+                        <span class="skill-label">W</span>
+                        <button class="keybind-btn" id="key-W" data-skill="w">W</button>
+                    </div>
+                    <div class="keybind-item">
+                        <span class="skill-label">E</span>
+                        <button class="keybind-btn" id="key-E" data-skill="e">E</button>
+                    </div>
+                    <div class="keybind-item">
+                        <span class="skill-label">R</span>
+                        <button class="keybind-btn" id="key-R" data-skill="r">R</button>
+                    </div>
+                    <div class="keybind-item">
+                        <span class="skill-label">D</span>
+                        <button class="keybind-btn" id="key-D" data-skill="d">D</button>
+                    </div>
+                    <div class="keybind-item">
+                        <span class="skill-label">F</span>
+                        <button class="keybind-btn" id="key-F" data-skill="f">F</button>
+                    </div>
+                </div>
+                <button class="reset-keys-btn" id="resetKeys">
+                    <i class="fas fa-undo"></i>
+                    Сбросить на стандартные (Q,W,E,R,D,F)
+                </button>
+            </div>
+        </div>
     </div>
 
     <div class="toast" id="toast">Сохранено</div>
