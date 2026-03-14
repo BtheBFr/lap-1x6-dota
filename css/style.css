@@ -925,3 +925,99 @@ body {
         font-size: 20px;
     }
 }
+
+/* Добавьте в конец файла style.css */
+
+.hero-attribute {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+.attribute-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.attribute-btn {
+    background: var(--bg-secondary);
+    border: 2px solid var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.attribute-btn i {
+    font-size: 18px;
+}
+
+.attribute-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.attribute-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.attribute-btn.strength.active {
+    background: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+.attribute-btn.agility.active {
+    background: #4dff4d;
+    border-color: #4dff4d;
+    color: #1a1e24;
+}
+
+.attribute-btn.intellect.active {
+    background: #4d4dff;
+    border-color: #4d4dff;
+}
+
+.attribute-btn.universal.active {
+    background: #ffd700;
+    border-color: #ffd700;
+    color: #1a1e24;
+}
+
+@media (max-width: 768px) {
+    .attribute-filters {
+        gap: 10px;
+    }
+    .attribute-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .attribute-btn i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .attribute-filters {
+        gap: 8px;
+    }
+    .attribute-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .attribute-btn i {
+        font-size: 12px;
+    }
+}
