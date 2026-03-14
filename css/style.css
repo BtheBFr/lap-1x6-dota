@@ -948,6 +948,8 @@ body {
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
+    font-family: 'Segoe UI', 'Arial', sans-serif; /* нормальный шрифт */
+    text-decoration: none; /* убрать подчеркивание */
 }
 
 .attribute-btn:hover {
@@ -982,6 +984,8 @@ body {
     padding-bottom: 5px;
     border-bottom: 2px solid var(--accent);
     display: inline-block;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .attribute-title.strength { color: #ff4d4d; border-bottom-color: #ff4d4d; }
@@ -995,7 +999,7 @@ body {
     gap: 15px;
 }
 
-/* ===== КАРТОЧКИ ГЕРОЕВ (ИСПРАВЛЕННЫЕ) ===== */
+/* ===== КАРТОЧКИ ГЕРОЕВ ===== */
 .hero-card {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -1038,13 +1042,16 @@ body {
 
 .hero-name {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600; /* полужирный но не жирный */
     color: var(--text-primary);
     text-align: center;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
+    letter-spacing: 0.3px; /* небольшой интервал */
 }
 
 @media (max-width: 768px) {
@@ -1082,5 +1089,8 @@ body {
     .hero-icon {
         width: 60px;
         height: 60px;
+    }
+    .hero-name {
+        font-size: 12px;
     }
 }
