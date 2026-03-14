@@ -12,12 +12,48 @@ const siteConfig = {
     // ============================================
     heroes: {
         // -------------------------------------------------
+        // ZEUS 
+        // -------------------------------------------------
+        "zeus": {
+            name: "Zeus",
+            nameRu: "Зевс",
+            attribute: "intellect",
+            icon: "icons/heroes/zeus.png",
+            
+            skills: {
+                "q": {
+                    name: "Arc Lightning",
+                    icon: "icons/skills/zeus/arc_lightning.png",
+                    description: "Выпускает молнию, которая перескакивает с одного врага на другого, нанося магический урон.",
+                    build: "icons/builds/zeus/zeus_arc_lightning.jpg"
+                },
+                "w": {
+                    name: "Lightning Bolt",
+                    icon: "icons/skills/zeus/lightning_bolt.png",
+                    description: "Бьет молнией по врагу. Дает обзор цели.",
+                    build: "builds/zeus/lightning_bolt.jpg"
+                },
+                "e": {
+                    name: "Static Field",
+                    icon: "icons/skills/zeus/static_field.png",
+                    description: "Пассивно бьет молнией врагов рядом когда используете скиллы.",
+                    build: "builds/zeus/static_field.jpg"
+                },
+                "r": {
+                    name: "Thundergod's Wrath",
+                    icon: "icons/skills/zeus/thundergod_wrath.png",
+                    description: "Бьет молнией всех врагов на карте.",
+                    build: "builds/zeus/thundergod_wrath.jpg"
+                }
+            }
+        },
+        // -------------------------------------------------
         // ENIGMA
         // -------------------------------------------------
         "enigma": {
             name: "Enigma",
             nameRu: "Энигма,енигма",
-            attribute: "strength",
+            attribute: "universal",
             icon: "icons/heroes/enigma.png",
             
             skills: {
@@ -47,42 +83,5 @@ const siteConfig = {
                 }
             }
         },
-        
-        // -------------------------------------------------
-        // ZEUS 
-        // -------------------------------------------------
-        "zeus": {
-            name: "Zeus",
-            nameRu: "Зевс",
-            attribute: "strength",
-            icon: "icons/heroes/zeus.png",
-            
-            skills: {
-                "q": {
-                    name: "Arc Lightning",
-                    icon: "icons/skills/zeus/arc_lightning.png",
-                    description: "Выпускает молнию, которая перескакивает с одного врага на другого, нанося магический урон.",
-                    build: "icons/builds/zeus/zeus_arc_lightning.jpg"
-                },
-                "w": {
-                    name: "Lightning Bolt",
-                    icon: "icons/skills/zeus/lightning_bolt.png",
-                    description: "Бьет молнией по врагу. Дает обзор цели.",
-                    build: "builds/zeus/lightning_bolt.jpg"
-                },
-                "e": {
-                    name: "Static Field",
-                    icon: "icons/skills/zeus/static_field.png",
-                    description: "Пассивно бьет молнией врагов рядом когда используете скиллы.",
-                    build: "builds/zeus/static_field.jpg"
-                },
-                "r": {
-                    name: "Thundergod's Wrath",
-                    icon: "icons/skills/zeus/thundergod_wrath.png",
-                    description: "Бьет молнией всех врагов на карте.",
-                    build: "builds/zeus/thundergod_wrath.jpg"
-                }
-            }
-        }
     }
 };
