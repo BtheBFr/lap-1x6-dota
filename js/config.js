@@ -30,14 +30,14 @@ const siteConfig = {
                 "w": {
                     name: "Lightning Bolt",
                     icon: "icons/skills/zeus/lightning_bolt.png",
-                    description: "Бьет молнией по врагу. Дает обзор цели.",
-                    build: "builds/zeus/lightning_bolt.jpg"
+                    description: "Ударом молнии наносит врагу урон и ненадолго его оглушает. Наносит крипам в 2 раза больше урона. В точке применения дает обзор радиусом 750 на 6 сек. Также раскрывает невидимость цели и дает на нее обзор. Не раскрывает невидимость вардов.",
+                    build: "icons/builds/zeus/zeus_lightning_bolt.jpg"
                 },
                 "e": {
-                    name: "Static Field",
-                    icon: "icons/skills/zeus/static_field.png",
-                    description: "Пассивно бьет молнией врагов рядом когда используете скиллы.",
-                    build: "builds/zeus/static_field.jpg"
+                    name: "Heavenly Jump",
+                    icon: "icons/skills/zeus/heavenly_jump.png",
+                    description: "Герой совершает божественный прыжок и бьёт током 3 ближайших противников, нанеся им урон и замедлив передвижение и атаку. Способность на 3 сек даёт беспрепятственный обзор в радиусе 900 вокруг владельца.",
+                    build: "icons/builds/zeus/heavenly_jump.jpg"
                 },
                 "r": {
                     name: "Thundergod's Wrath",
