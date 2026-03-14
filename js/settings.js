@@ -36,24 +36,6 @@ function loadKeybindings() {
 
 // Настройка слушателей
 function setupSettingsListeners() {
-    // Кнопка настроек
-    const settingsBtn = document.getElementById('settingsBtn');
-    const settingsModal = document.getElementById('settingsModal');
-    const closeSettingsModal = document.getElementById('closeSettingsModal');
-    
-    if (settingsBtn) {
-        settingsBtn.addEventListener('click', () => {
-            settingsModal.classList.add('active');
-        });
-    }
-    
-    if (closeSettingsModal) {
-        closeSettingsModal.addEventListener('click', () => {
-            settingsModal.classList.remove('active');
-            stopRecording();
-        });
-    }
-    
     // Кнопки клавиш
     document.querySelectorAll('.keybind-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
