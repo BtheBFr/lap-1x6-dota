@@ -793,33 +793,26 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;      /* центрируем по горизонтали */
+    justify-content: center;  /* центрируем по вертикали */
     overflow: hidden;
     box-sizing: border-box;
-}
-
-.hero-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
-    background: var(--bg-tertiary);
 }
 
 .hero-icon {
     width: 90px;
     height: 90px;
-    border-radius: 50%;  /* это делает круг */
-    margin: 0 auto 10px;
-    object-fit: cover;    /* это чтобы фото не искажалось */
+    border-radius: 50%;
+    margin: 0 auto 10px;      /* auto слева и справа центрирует */
+    object-fit: cover;
     border: 3px solid var(--bg-tertiary);
     transition: var(--transition);
     display: block;
-    aspect-ratio: 1 / 1;  /* принудительно квадрат */
-}
-
-/* Если фото все еще овальное, добавьте это */
-.hero-card .hero-icon {
-    border-radius: 50% !important;
+    aspect-ratio: 1 / 1;
+    /* Добавьте это для надежности */
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 .hero-name {
@@ -834,47 +827,9 @@ body {
     font-family: 'Segoe UI', 'Arial', sans-serif;
     text-decoration: none;
     letter-spacing: 0.3px;
-}
-
-@media (max-width: 768px) {
-    .attribute-filters {
-        gap: 3px;
-    }
-    .attribute-btn {
-        padding: 4px 8px;
-        font-size: 11px;
-    }
-    .attribute-title {
-        font-size: 20px;
-    }
-    .attribute-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 10px;
-    }
-    .hero-icon {
-        width: 70px;
-        height: 70px;
-    }
-    .hero-name {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .attribute-filters {
-        gap: 2px;
-    }
-    .attribute-btn {
-        padding: 3px 6px;
-        font-size: 10px;
-    }
-    .hero-icon {
-        width: 60px;
-        height: 60px;
-    }
-    .hero-name {
-        font-size: 12px;
-    }
+    /* Добавьте это */
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* Адаптация для мобильных */
