@@ -32,53 +32,71 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             this.classList.add('active');
             currentAttribute = this.dataset.attribute;
-            loadHeroes();
-            if (searchInput && searchInput.value) {
-                applySearch(searchInput.value);
-            }
+            filterByAttribute();
         });
     });
 });
 
 // Загрузка сетки героев
 function loadHeroes() {
-    const heroesGrid = document.getElementById('heroesGrid');
-    if (!heroesGrid) return;
+    // Очищаем все сетки
+    document.getElementById('strength-grid').innerHTML = '';
+    document.getElementById('agility-grid').innerHTML = '';
+    document.getElementById('intellect-grid').innerHTML = '';
+    document.getElementById('universal-grid').innerHTML = '';
     
-    heroesGrid.innerHTML = '';
-    
+    // Сортируем героев по атрибутам
     Object.keys(siteConfig.heroes).forEach(heroKey => {
         const hero = siteConfig.heroes[heroKey];
-        
-        if (currentAttribute !== 'all' && hero.attribute !== currentAttribute) {
-            return;
-        }
+        const attr = hero.attribute || 'universal';
         
         const heroCard = document.createElement('div');
         heroCard.className = 'hero-card';
         heroCard.setAttribute('data-hero', heroKey);
-        heroCard.setAttribute('data-attribute', hero.attribute || 'universal');
+        heroCard.setAttribute('data-attribute', attr);
         heroCard.onclick = () => goToHero(heroKey);
         
         heroCard.innerHTML = `
             <img src="${hero.icon}" alt="${hero.name}" class="hero-icon" loading="lazy">
             <div class="hero-name">${hero.name}</div>
-            <div class="hero-attribute">${getAttributeName(hero.attribute)}</div>
         `;
         
-        heroesGrid.appendChild(heroCard);
+        // Добавляем в соответствующую сетку
+        if (attr === 'strength') {
+            document.getElementById('strength-grid').appendChild(heroCard);
+        } else if (attr === 'agility') {
+            document.getElementById('agility-grid').appendChild(heroCard);
+        } else if (attr === 'intellect') {
+            document.getElementById('intellect-grid').appendChild(heroCard);
+        } else {
+            document.getElementById('universal-grid').appendChild(heroCard);
+        }
     });
+    
+    // Применяем фильтр
+    filterByAttribute();
 }
 
-// Получить название атрибута
-function getAttributeName(attr) {
-    const names = {
-        'strength': '💪 Сила',
-        'agility': '⚡ Ловкость',
-        'intellect': '🧠 Интеллект',
-        'universal': '✨ Универсальный'
-    };
-    return names[attr] || '✨ Универсальный';
+// Фильтрация по атрибуту
+function filterByAttribute() {
+    const sections = ['strength', 'agility', 'intellect', 'universal'];
+    
+    sections.forEach(attr => {
+        const section = document.getElementById(attr + '-section');
+        const grid = document.getElementById(attr + '-grid');
+        
+        if (currentAttribute === 'all' || currentAttribute === attr) {
+            section.classList.remove('hidden');
+        } else {
+            section.classList.add('hidden');
+        }
+    });
+    
+    // Применяем поиск если есть
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput && searchInput.value) {
+        applySearch(searchInput.value);
+    }
 }
 
 // Поиск героев
@@ -102,7 +120,6 @@ function applySearch(searchTerm) {
         
         if (nameEn.includes(searchTerm) || nameRu.includes(searchTerm)) {
             card.style.display = 'block';
-            card.style.animation = 'fadeIn 0.5s ease';
         } else {
             card.style.display = 'none';
         }
