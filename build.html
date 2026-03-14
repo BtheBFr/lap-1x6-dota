@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Сборка - Lap 1x6 Dota</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main class="container build-page">
+        <div class="build-header">
+            <button class="back-btn" id="backBtn">
+                <i class="fas fa-arrow-left"></i>
+                Назад к герою
+            </button>
+            <h1 id="buildHeroName"></h1>
+            <button class="download-btn" id="downloadBtn">
+                <i class="fas fa-download"></i>
+                Скачать сборку
+            </button>
+        </div>
+
+        <div class="build-info">
+            <h2 id="buildSkillName"></h2>
+        </div>
+
+        <div class="build-image-container">
+            <img src="" alt="" class="build-image" id="buildImage">
+        </div>
+    </main>
+
+    <button class="support-button" id="supportBtn">
+        <i class="fas fa-headset"></i>
+        <span>Поддержка</span>
+    </button>
+
+    <!-- Модальное окно поддержки -->
+    <div class="modal" id="supportModal">
+        <!-- ... копировать из index.html ... -->
+    </div>
+
+    <div class="toast" id="toast">Сохранено</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/support.js"></script>
+</body>
+</html>
