@@ -41,9 +41,9 @@ const siteConfig = {
                 },
                 "r": {
                     name: "Thundergod's Wrath",
-                    icon: "icons/skills/zeus/thundergod_wrath.png",
-                    description: "Бьет молнией всех врагов на карте.",
-                    build: "builds/zeus/thundergod_wrath.jpg"
+                    icon: "icons/skills/zeus/thundergods_wrath.png",
+                    description: "Поражает всех вражеских врагов молнией вне зависимости от их местоположения, нанося магический урон. Способность также раскрывает невидимость вражеских существ вокруг каждого поражённого противника. Если герой врага невидим, то он не получит урона, но невидимость всё равно раскроется. Наносит только 60% урона целям на расстоянии большем чем 2500. Наносит урон крипам в радиусе 1500.",
+                    build: "icons/builds/zeus/thundergods_wrath.jpg"
                 }
             }
         },
