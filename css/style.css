@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 :root {
@@ -24,6 +24,7 @@ body {
     min-height: 100vh;
     position: relative;
     padding: 20px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 /* Настройки кнопка */
@@ -41,6 +42,8 @@ body {
     z-index: 100;
     font-size: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .settings-button:hover {
@@ -69,6 +72,8 @@ body {
     z-index: 100;
     font-size: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .home-button:hover {
@@ -97,6 +102,9 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: titleGlow 2s ease-in-out infinite alternate;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 @keyframes titleGlow {
@@ -109,6 +117,7 @@ body {
     color: var(--text-secondary);
     margin-bottom: 40px;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 /* Поиск */
@@ -136,6 +145,7 @@ body {
     color: var(--text-primary);
     font-size: 16px;
     transition: var(--transition);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .search-input:focus {
@@ -146,65 +156,6 @@ body {
 
 .search-input::placeholder {
     color: var(--text-secondary);
-}
-
-/* Сетка героев */
-.heroes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 20px;
-    padding: 10px;
-}
-
-/* Карточка героя */
-.hero-card {
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    padding: 20px 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transition);
-    border: 2px solid transparent;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(255, 77, 77, 0.3);
-    background: var(--bg-tertiary);
-}
-
-.hero-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    object-fit: cover;
-    border: 3px solid var(--bg-tertiary);
-    transition: var(--transition);
-}
-
-.hero-card:hover .hero-icon {
-    border-color: var(--accent);
-    transform: scale(1.05);
-}
-
-.hero-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--text-primary);
 }
 
 /* Кнопка поддержки */
@@ -226,6 +177,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .support-button:hover {
@@ -295,6 +248,7 @@ body {
 .modal-header h2 {
     color: var(--accent);
     font-size: 24px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .close-btn {
@@ -326,6 +280,7 @@ body {
     color: var(--text-secondary);
     margin-bottom: 20px;
     font-size: 16px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 /* Опции поддержки */
@@ -349,6 +304,8 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .support-option i {
@@ -400,6 +357,7 @@ body {
     color: var(--text-primary);
     font-size: 16px;
     transition: var(--transition);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .modal-textarea {
@@ -429,6 +387,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .submit-support-btn:hover {
@@ -455,6 +415,7 @@ body {
     font-size: 14px;
     color: var(--text-secondary);
     margin-left: 5px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .keybind-btn {
@@ -468,6 +429,8 @@ body {
     cursor: pointer;
     transition: var(--transition);
     text-transform: uppercase;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .keybind-btn:hover {
@@ -502,6 +465,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .reset-keys-btn:hover {
@@ -525,6 +490,7 @@ body {
     z-index: 2000;
     transition: transform 0.3s ease;
     opacity: 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .toast.show {
@@ -563,6 +529,8 @@ body {
     background: linear-gradient(135deg, #fff, var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-weight: 700;
 }
 
 .skills-grid {
@@ -604,6 +572,7 @@ body {
     font-weight: bold;
     font-size: 18px;
     box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .skill-header {
@@ -625,12 +594,14 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: var(--accent);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 .skill-description {
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 16px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 /* Страница сборки */
@@ -638,15 +609,20 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 20px 20px;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .build-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .back-btn {
@@ -661,6 +637,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .back-btn:hover {
@@ -682,56 +660,14 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .download-btn:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
-}
-
-.build-image-container {
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.build-image {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius-sm);
-    display: block;
-}
-
-.build-info {
-    margin-top: 20px;
-    padding: 20px;
-    background: var(--bg-tertiary);
-    border-radius: var(--border-radius-sm);
-    color: var(--text-secondary);
-    text-align: center;
-}
-
-/* СТРАНИЦА СБОРКИ - БЕЗ СКРОЛЛА */
-.build-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px 20px;
-    height: calc(100vh - 40px);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.build-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-    flex-shrink: 0;
 }
 
 .build-info {
@@ -741,6 +677,11 @@ body {
     border-radius: var(--border-radius-sm);
     text-align: center;
     flex-shrink: 0;
+}
+
+.build-info h2 {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    color: var(--text-primary);
 }
 
 .build-image-container {
@@ -765,167 +706,6 @@ body {
     display: block;
 }
 
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .settings-button {
-        top: 10px;
-        right: 10px;
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .home-button {
-        top: 10px;
-        left: 10px;
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 50px 10px 10px;
-    }
-
-    .hero-page {
-        padding-top: 70px;
-    }
-
-    .build-page {
-        padding-top: 80px;
-    }
-
-    .heroes-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 15px;
-    }
-
-    .hero-icon {
-        width: 80px;
-        height: 80px;
-    }
-
-    .hero-name {
-        font-size: 16px;
-    }
-
-    .support-button {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-
-    .support-button i {
-        font-size: 20px;
-    }
-
-    .modal-content {
-        margin: 10px;
-    }
-
-    .keybinds-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .keybind-btn {
-        padding: 15px;
-        font-size: 20px;
-    }
-
-    .hero-header {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .hero-header-icon {
-        width: 120px;
-        height: 120px;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-
-    .build-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .back-btn, .download-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .heroes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .settings-button span {
-        display: none;
-    }
-
-    .settings-button i {
-        margin-right: 0;
-    }
-
-    .home-button span {
-        display: none;
-    }
-
-    .home-button i {
-        margin-right: 0;
-    }
-
-    .support-button span {
-        display: none;
-    }
-
-    .support-button {
-        padding: 15px;
-        border-radius: 50%;
-    }
-
-    .support-button i {
-        margin: 0;
-    }
-
-    .modal-header h2 {
-        font-size: 20px;
-    }
-
-    .support-option {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-/* Адаптация для больших экранов */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1600px;
-    }
-
-    .heroes-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    .hero-icon {
-        width: 120px;
-        height: 120px;
-    }
-
-    .hero-name {
-        font-size: 20px;
-    }
-}
-
 /* ===== ФИЛЬТРЫ ===== */
 .attribute-filters {
     display: flex;
@@ -948,8 +728,8 @@ body {
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
-    font-family: 'Segoe UI', 'Arial', sans-serif; /* нормальный шрифт */
-    text-decoration: none; /* убрать подчеркивание */
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-decoration: none;
 }
 
 .attribute-btn:hover {
@@ -986,6 +766,7 @@ body {
     display: inline-block;
     font-family: 'Segoe UI', 'Arial', sans-serif;
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
 .attribute-title.strength { color: #ff4d4d; border-bottom-color: #ff4d4d; }
@@ -1042,7 +823,7 @@ body {
 
 .hero-name {
     font-size: 16px;
-    font-weight: 600; /* полужирный но не жирный */
+    font-weight: 500;
     color: var(--text-primary);
     text-align: center;
     width: 100%;
@@ -1051,10 +832,91 @@ body {
     white-space: nowrap;
     font-family: 'Segoe UI', 'Arial', sans-serif;
     text-decoration: none;
-    letter-spacing: 0.3px; /* небольшой интервал */
+    letter-spacing: 0.3px;
 }
 
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .settings-button {
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .home-button {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 50px 10px 10px;
+    }
+
+    .hero-page {
+        padding-top: 70px;
+    }
+
+    .build-page {
+        padding-top: 80px;
+    }
+
+    .support-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .support-button i {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        margin: 10px;
+    }
+
+    .keybinds-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .keybind-btn {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .hero-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-header-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .build-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .back-btn, .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .attribute-filters {
         gap: 3px;
     }
@@ -1079,6 +941,48 @@ body {
 }
 
 @media (max-width: 480px) {
+    .heroes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .settings-button span {
+        display: none;
+    }
+
+    .settings-button i {
+        margin-right: 0;
+    }
+
+    .home-button span {
+        display: none;
+    }
+
+    .home-button i {
+        margin-right: 0;
+    }
+
+    .support-button span {
+        display: none;
+    }
+
+    .support-button {
+        padding: 15px;
+        border-radius: 50%;
+    }
+
+    .support-button i {
+        margin: 0;
+    }
+
+    .modal-header h2 {
+        font-size: 20px;
+    }
+
+    .support-option {
+        padding: 12px;
+        font-size: 14px;
+    }
+
     .attribute-filters {
         gap: 2px;
     }
@@ -1092,5 +996,25 @@ body {
     }
     .hero-name {
         font-size: 12px;
+    }
+}
+
+/* Адаптация для больших экранов */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    .heroes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .hero-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-name {
+        font-size: 18px;
     }
 }
