@@ -1,5 +1,7 @@
 // Основной файл с логикой сайта
 
+let currentAttribute = 'all';
+
 // Загрузка главной страницы
 document.addEventListener('DOMContentLoaded', function() {
     // Загружаем героев на главную
@@ -21,6 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'index.html';
         });
     }
+
+    // Фильтрация по атрибутам
+    document.querySelectorAll('.attribute-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.attribute-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            this.classList.add('active');
+            currentAttribute = this.dataset.attribute;
+            loadHeroes();
+            if (searchInput && searchInput.value) {
+                applySearch(searchInput.value);
+            }
+        });
+    });
 });
 
 // Загрузка сетки героев
@@ -32,42 +49,63 @@ function loadHeroes() {
     
     Object.keys(siteConfig.heroes).forEach(heroKey => {
         const hero = siteConfig.heroes[heroKey];
+        
+        if (currentAttribute !== 'all' && hero.attribute !== currentAttribute) {
+            return;
+        }
+        
         const heroCard = document.createElement('div');
         heroCard.className = 'hero-card';
         heroCard.setAttribute('data-hero', heroKey);
+        heroCard.setAttribute('data-attribute', hero.attribute || 'universal');
         heroCard.onclick = () => goToHero(heroKey);
         
         heroCard.innerHTML = `
             <img src="${hero.icon}" alt="${hero.name}" class="hero-icon" loading="lazy">
             <div class="hero-name">${hero.name}</div>
+            <div class="hero-attribute">${getAttributeName(hero.attribute)}</div>
         `;
         
         heroesGrid.appendChild(heroCard);
     });
 }
 
+// Получить название атрибута
+function getAttributeName(attr) {
+    const names = {
+        'strength': '💪 Сила',
+        'agility': '⚡ Ловкость',
+        'intellect': '🧠 Интеллект',
+        'universal': '✨ Универсальный'
+    };
+    return names[attr] || '✨ Универсальный';
+}
+
 // Поиск героев
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
     searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase().trim();
-        const heroCards = document.querySelectorAll('.hero-card');
+        applySearch(e.target.value);
+    });
+}
+
+function applySearch(searchTerm) {
+    searchTerm = searchTerm.toLowerCase().trim();
+    const heroCards = document.querySelectorAll('.hero-card');
+    
+    heroCards.forEach(card => {
+        const heroKey = card.getAttribute('data-hero');
+        const hero = siteConfig.heroes[heroKey];
         
-        heroCards.forEach(card => {
-            const heroKey = card.getAttribute('data-hero');
-            const hero = siteConfig.heroes[heroKey];
-            
-            // Проверяем совпадение с английским или русским названием
-            const nameEn = hero.name.toLowerCase();
-            const nameRu = hero.nameRu ? hero.nameRu.toLowerCase() : '';
-            
-            if (nameEn.includes(searchTerm) || nameRu.includes(searchTerm)) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeIn 0.5s ease';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+        const nameEn = hero.name.toLowerCase();
+        const nameRu = hero.nameRu ? hero.nameRu.toLowerCase() : '';
+        
+        if (nameEn.includes(searchTerm) || nameRu.includes(searchTerm)) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeIn 0.5s ease';
+        } else {
+            card.style.display = 'none';
+        }
     });
 }
 
@@ -87,12 +125,10 @@ function loadHeroPage() {
         return;
     }
     
-    // Заполняем шапку
     document.getElementById('heroIcon').src = hero.icon;
     document.getElementById('heroIcon').alt = hero.name;
     document.getElementById('heroName').textContent = hero.name;
     
-    // Загружаем скиллы
     const skillsGrid = document.getElementById('skillsGrid');
     skillsGrid.innerHTML = '';
     
@@ -162,7 +198,6 @@ if (downloadBtn) {
         link.href = img.src;
         link.download = img.src.split('/').pop();
         link.click();
-        
         showToast('Скачивание начато');
     });
 }
@@ -208,7 +243,6 @@ window.addEventListener('click', (e) => {
         supportModal.classList.remove('active');
         resetSupportModal();
     }
-    
     if (e.target === settingsModal) {
         settingsModal.classList.remove('active');
     }
@@ -231,7 +265,6 @@ document.querySelectorAll('.support-option').forEach(option => {
         document.querySelectorAll('.support-option').forEach(opt => {
             opt.classList.remove('selected');
         });
-        
         this.classList.add('selected');
         
         const problem = this.dataset.problem;
@@ -241,7 +274,6 @@ document.querySelectorAll('.support-option').forEach(option => {
         
         additionalFields.style.display = 'block';
         
-        // Показываем нужные поля
         if (problem === 'missing_skill') {
             heroField.style.display = 'block';
             skillField.style.display = 'block';
@@ -293,7 +325,6 @@ function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
     toast.classList.add('show');
-    
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
