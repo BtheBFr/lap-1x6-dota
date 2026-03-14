@@ -971,6 +971,10 @@ body {
     margin-bottom: 30px;
 }
 
+.attribute-section.hidden {
+    display: none;
+}
+
 .attribute-title {
     font-size: 24px;
     font-weight: bold;
@@ -989,11 +993,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 15px;
-}
-
-/* Скрываем секции если не активны */
-.attribute-section.hidden {
-    display: none;
 }
 
 @media (max-width: 768px) {
