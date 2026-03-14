@@ -60,19 +60,19 @@ const siteConfig = {
         },
         
         // -------------------------------------------------
-        // PUDGE
+        // ENIGMA
         // -------------------------------------------------
-        "pudge": {
-            name: "Pudge",
-            nameRu: "Пудж",
-            icon: "icons/heroes/pudge.png",
+        "enigma": {
+            name: "Enigma",
+            nameRu: "Энигма,енигма",
+            icon: "icons/heroes/enigma.png",
             
             skills: {
                 "q": {
-                    name: "Meat Hook",
-                    icon: "icons/skills/pudge/hook.png",
-                    description: "Бросает крюк, который зацепляет первого врага и притягивает к Pudge.",
-                    build: "builds/pudge/hook.jpg"
+                    name: "Malefice",
+                    icon: "icons/skills/enigma/malefice.png",
+                    description: "Концентрирует энергию героя на цели, отчего та получает урон и оглушение каждые 2 секунды. Срабатывает на противников в радиусе 250. Наносит крипам на 30% больше урона. Перезарядка способности начинается после конца эффекта.",
+                    build: "icons/builds/enigma/enigma_malefice.jpg"
                 },
                 "w": {
                     name: "Rot",
@@ -87,8 +87,8 @@ const siteConfig = {
                     build: "builds/pudge/flesh_heap.jpg"
                 },
                 "r": {
-                    name: "Dismember",
-                    icon: "icons/skills/pudge/dismember.png",
+                    name: "Black Hole",
+                    icon: "icons/skills/enigma/black_hole.png",
                     description: "Хватает врага и наносит урон с течением времени, оглушая его.",
                     build: "builds/pudge/dismember.jpg"
                 }
@@ -96,7 +96,7 @@ const siteConfig = {
         },
         
         // -------------------------------------------------
-        // ZEUS (ДОБАВЛЕН ПРАВИЛЬНО)
+        // ZEUS 
         // -------------------------------------------------
         "zeus": {
             name: "Zeus",
