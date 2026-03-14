@@ -21,26 +21,40 @@
             <input type="text" class="search-input" id="searchInput" placeholder="Поиск персонажа...">
         </div>
 
-        <!-- ФИЛЬТРЫ ПО АТРИБУТАМ -->
+        <!-- ФИЛЬТРЫ ПО АТРИБУТАМ (МАЛЕНЬКИЕ) -->
         <div class="attribute-filters">
             <button class="attribute-btn active" data-attribute="all">Все</button>
-            <button class="attribute-btn strength" data-attribute="strength">
-                <i class="fas fa-heart"></i> Сила
-            </button>
-            <button class="attribute-btn agility" data-attribute="agility">
-                <i class="fas fa-bolt"></i> Ловкость
-            </button>
-            <button class="attribute-btn intellect" data-attribute="intellect">
-                <i class="fas fa-brain"></i> Интеллект
-            </button>
-            <button class="attribute-btn universal" data-attribute="universal">
-                <i class="fas fa-star"></i> Универсальные
-            </button>
+            <button class="attribute-btn strength" data-attribute="strength">Сила</button>
+            <button class="attribute-btn agility" data-attribute="agility">Ловкость</button>
+            <button class="attribute-btn intellect" data-attribute="intellect">Интеллект</button>
+            <button class="attribute-btn universal" data-attribute="universal">Универсальные</button>
         </div>
 
         <!-- СЕТКА ГЕРОЕВ -->
-        <div class="heroes-grid" id="heroesGrid">
-            <!-- Герои будут загружаться через JavaScript -->
+        <div id="heroesContainer">
+            <!-- Сила -->
+            <div class="attribute-section" id="strength-section">
+                <h2 class="attribute-title strength">СИЛА:</h2>
+                <div class="attribute-grid" id="strength-grid"></div>
+            </div>
+            
+            <!-- Ловкость -->
+            <div class="attribute-section" id="agility-section">
+                <h2 class="attribute-title agility">ЛОВКОСТЬ:</h2>
+                <div class="attribute-grid" id="agility-grid"></div>
+            </div>
+            
+            <!-- Интеллект -->
+            <div class="attribute-section" id="intellect-section">
+                <h2 class="attribute-title intellect">ИНТЕЛЛЕКТ:</h2>
+                <div class="attribute-grid" id="intellect-grid"></div>
+            </div>
+            
+            <!-- Универсальные -->
+            <div class="attribute-section" id="universal-section">
+                <h2 class="attribute-title universal">УНИВЕРСАЛЬНЫЕ:</h2>
+                <div class="attribute-grid" id="universal-grid"></div>
+            </div>
         </div>
     </main>
 
