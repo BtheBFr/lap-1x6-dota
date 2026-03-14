@@ -1,5 +1,5 @@
 // Отправка жалоб в Google Sheets
-// Apps Script URL - ВАША ССЫЛКА
+// Apps Script URL - ВАША ССЫЛКА (уже вставлена)
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyll3lmKAoU4xllrdtSzZAKXTWBum6ey-_2Euqp1qnkOaIvPClYKqxe73PfQhy-_5eTEQ/exec';
 
 // Отправка тикета в поддержку
