@@ -54,6 +54,34 @@ body {
     color: var(--accent);
 }
 
+/* Кнопка на главную */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 1px solid var(--bg-tertiary);
+    transition: var(--transition);
+    z-index: 100;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.home-button:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.home-button i {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
 /* Основной контейнер */
 .container {
     max-width: 1400px;
@@ -504,118 +532,6 @@ body {
     opacity: 1;
 }
 
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .settings-button {
-        top: 10px;
-        right: 10px;
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 50px 10px 10px;
-    }
-
-    .heroes-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 15px;
-    }
-
-    .hero-icon {
-        width: 80px;
-        height: 80px;
-    }
-
-    .hero-name {
-        font-size: 16px;
-    }
-
-    .support-button {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-
-    .support-button i {
-        font-size: 20px;
-    }
-
-    .modal-content {
-        margin: 10px;
-    }
-
-    .keybinds-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .keybind-btn {
-        padding: 15px;
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .heroes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .settings-button span {
-        display: none;
-    }
-
-    .settings-button i {
-        margin-right: 0;
-    }
-
-    .support-button span {
-        display: none;
-    }
-
-    .support-button {
-        padding: 15px;
-        border-radius: 50%;
-    }
-
-    .support-button i {
-        margin: 0;
-    }
-
-    .modal-header h2 {
-        font-size: 20px;
-    }
-
-    .support-option {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-/* Адаптация для больших экранов */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1600px;
-    }
-
-    .heroes-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    .hero-icon {
-        width: 120px;
-        height: 120px;
-    }
-
-    .hero-name {
-        font-size: 20px;
-    }
-}
-
 /* Страница героя */
 .hero-page {
     max-width: 1200px;
@@ -794,4 +710,157 @@ body {
     border-radius: var(--border-radius-sm);
     color: var(--text-secondary);
     text-align: center;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .settings-button {
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .home-button {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 50px 10px 10px;
+    }
+
+    .heroes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 15px;
+    }
+
+    .hero-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-name {
+        font-size: 16px;
+    }
+
+    .support-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .support-button i {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        margin: 10px;
+    }
+
+    .keybinds-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .keybind-btn {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .hero-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-header-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .build-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .back-btn, .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .settings-button span {
+        display: none;
+    }
+
+    .settings-button i {
+        margin-right: 0;
+    }
+
+    .home-button span {
+        display: none;
+    }
+
+    .home-button i {
+        margin-right: 0;
+    }
+
+    .support-button span {
+        display: none;
+    }
+
+    .support-button {
+        padding: 15px;
+        border-radius: 50%;
+    }
+
+    .support-button i {
+        margin: 0;
+    }
+
+    .modal-header h2 {
+        font-size: 20px;
+    }
+
+    .support-option {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Адаптация для больших экранов */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    .heroes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .hero-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-name {
+        font-size: 20px;
+    }
 }
