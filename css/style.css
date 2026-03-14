@@ -783,13 +783,17 @@ body {
 .hero-card {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
-    padding: 15px 5px;        /* уменьшил боковые отступы */
+    padding: 15px 5px;
     text-align: center;
     cursor: pointer;
+    user-select: none;          /* убирает выделение */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     transition: var(--transition);
     border: 2px solid transparent;
     width: 100%;
-    max-width: 140px;         /* чуть меньше */
+    max-width: 140px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -799,16 +803,20 @@ body {
     box-sizing: border-box;
 }
 
+/* Для фото */
 .hero-icon {
-    width: 75px;              /* уменьшил с 90px до 75px */
-    height: 75px;             /* уменьшил с 90px до 75px */
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    margin: 0 auto 8px;       /* auto центрирует */
+    margin: 0 auto 8px;
     object-fit: cover;
     border: 3px solid var(--bg-tertiary);
     transition: var(--transition);
     display: block;
     aspect-ratio: 1 / 1;
+    pointer-events: none;       /* фото не выделяется */
+    -webkit-user-drag: none;    /* нельзя перетащить */
+    user-select: none;
 }
 
 .hero-name {
