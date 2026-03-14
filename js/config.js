@@ -17,6 +17,7 @@ const siteConfig = {
         "enigma": {
             name: "Enigma",
             nameRu: "Энигма,енигма",
+            attribute: "strength",
             icon: "icons/heroes/enigma.png",
             
             skills: {
@@ -53,6 +54,7 @@ const siteConfig = {
         "zeus": {
             name: "Zeus",
             nameRu: "Зевс",
+            attribute: "strength",
             icon: "icons/heroes/zeus.png",
             
             skills: {
