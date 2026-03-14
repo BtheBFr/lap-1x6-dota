@@ -58,16 +58,16 @@ const siteConfig = {
             
             skills: {
                 "q": {
-                    name: "Arc Lightning",
-                    icon: "icons/skills/zeus/arc_lightning.png",
-                    description: "Выпускает молнию, которая перескакивает с одного врага на другого, нанося магический урон.",
-                    build: "icons/builds/zeus/zeus_arc_lightning.jpg"
+                    name: "Laser",
+                    icon: "icons/skills/tinker/laser.png",
+                    description: "Выпускает луч сконцентрированной энергии, который наносит урон цели и ослепляет её, из-за чего она промахивается при каждой атаке. Также срабатывает на противников в радиусе 225 от основной цели.",
+                    build: "icons/builds/tinker/tinker_laser.jpg"
                 },
                 "w": {
-                    name: "Lightning Bolt",
-                    icon: "icons/skills/zeus/lightning_bolt.png",
-                    description: "Ударом молнии наносит врагу урон и ненадолго его оглушает. Наносит крипам в 2 раза больше урона. В точке применения дает обзор радиусом 750 на 6 сек. Также раскрывает невидимость цели и дает на нее обзор. Не раскрывает невидимость вардов.",
-                    build: "icons/builds/zeus/zeus_lightning_bolt.jpg"
+                    name: "March of the machines",
+                    icon: "icons/skills/tinker/march_of_the_machines.png",
+                    description: "Призывает армию механических слуг, атакующих врагов в области вокруг героя. Пока способность активна, вы не можете наносить урон постройкам.",
+                    build: "icons/builds/tinker/tinker_march_of_the_machines.jpg"
                 },
                 "e": {
                     name: "Heavenly Jump",
