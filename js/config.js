@@ -108,7 +108,7 @@ const siteConfig = {
                     name: "Arc Lightning",
                     icon: "icons/skills/zeus/arc_lightning.png",
                     description: "Выпускает молнию, которая перескакивает с одного врага на другого, нанося магический урон.",
-                    build: "builds/zeus/zeus_arc_lightning.jpg"
+                    build: "icons/builds/zeus/zeus_arc_lightning.jpg"
                 },
                 "w": {
                     name: "Lightning Bolt",
