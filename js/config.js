@@ -46,7 +46,7 @@ const siteConfig = {
                     build: "icons/builds/zeus/thundergods_wrath.jpg"
                 }
             }
-        },
+        }, 
         // -------------------------------------------------
         // ENIGMA
         // -------------------------------------------------
