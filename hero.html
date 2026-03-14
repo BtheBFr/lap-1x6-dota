@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Герой - Lap 1x6 Dota</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="settings-button" id="settingsBtn">
+        <i class="fas fa-cog"></i> Настройки
+    </div>
+
+    <main class="container hero-page">
+        <div class="hero-header">
+            <img src="" alt="" class="hero-header-icon" id="heroIcon">
+            <h1 class="hero-header-name" id="heroName"></h1>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+            <!-- Скиллы будут загружены через JS -->
+        </div>
+    </main>
+
+    <button class="support-button" id="supportBtn">
+        <i class="fas fa-headset"></i>
+        <span>Поддержка</span>
+    </button>
+
+    <!-- Модальное окно поддержки (такое же как в index.html) -->
+    <div class="modal" id="supportModal">
+        <!-- ... копировать из index.html ... -->
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div class="modal" id="settingsModal">
+        <!-- ... копировать из index.html ... -->
+    </div>
+
+    <div class="toast" id="toast">Сохранено</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/support.js"></script>
+</body>
+</html>
